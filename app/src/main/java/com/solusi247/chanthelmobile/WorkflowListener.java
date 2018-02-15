@@ -1,6 +1,7 @@
 package com.solusi247.chanthelmobile;
 
-public interface OverflowListener {
+public interface WorkflowListener {
 
+    void gotoFolder();
     void showOptions();
 }

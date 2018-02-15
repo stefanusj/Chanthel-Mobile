@@ -13,4 +13,14 @@
     <string name="menu_search">Search</string>
     <string name="menu_grid">Display Grid</string>
     <string name="menu_list">Display List</string>
+
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_preview">Preview</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_cut">Cut</string>
+    <string name="action_set_owner">Set Owner</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_permission">Permission</string>
+    <string name="action_paste">Paste</string>
 </resources>

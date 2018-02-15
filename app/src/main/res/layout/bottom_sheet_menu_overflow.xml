@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Edit" />
+            android:text="@string/action_edit" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Delete" />
+            android:text="@string/action_delete" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Preview" />
+            android:text="@string/action_preview" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Rename" />
+            android:text="@string/action_rename" />
     </LinearLayout>
 
     <LinearLayout
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Cut" />
+            android:text="@string/action_cut" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Set Owner" />
+            android:text="@string/action_set_owner" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Copy" />
+            android:text="@string/action_copy" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
@@ -117,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Permission" />
+            android:text="@string/action_permission" />
     </LinearLayout>
 
     <LinearLayout
@@ -132,7 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Paste" />
+            android:text="@string/action_paste" />
 
     </LinearLayout>
 </LinearLayout>

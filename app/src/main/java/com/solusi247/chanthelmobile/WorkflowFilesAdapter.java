@@ -1,23 +1,33 @@
 package com.solusi247.chanthelmobile;
 
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class WorkflowAdapter extends RecyclerView.Adapter<WorkflowAdapter.WorkflowViewHolder> {
+public class WorkflowFilesAdapter extends RecyclerView.Adapter<WorkflowFilesAdapter.WorkflowViewHolder> {
 
-    private OverflowListener listener;
+    private WorkflowListener listener;
+    private RecyclerView.LayoutManager layoutManager;
 
-    public WorkflowAdapter(OverflowListener listener) {
+    public WorkflowFilesAdapter(WorkflowListener listener, RecyclerView.LayoutManager layoutManager) {
         this.listener = listener;
+        this.layoutManager = layoutManager;
     }
 
     @Override
     public WorkflowViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_folder_grid, parent, false);
-        return new WorkflowViewHolder(view);
+        if (layoutManager instanceof GridLayoutManager) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_file_grid, parent, false);
+            return new WorkflowViewHolder(view);
+        } else if (layoutManager instanceof LinearLayoutManager) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_file_linear, parent, false);
+            return new WorkflowViewHolder(view);
+        }
+        return null;
     }
 
     @Override

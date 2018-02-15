@@ -1,9 +1,8 @@
 package com.solusi247.chanthelmobile;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,45 +13,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    BottomSheetBehavior bottomSheetBehavior;
-
     DrawerLayout drawer;
     FloatingActionButton fab;
-    LinearLayout llBottomSheet;
     NavigationView navigationView;
     Toolbar toolbar;
     private View.OnClickListener onFabClicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
-//            change the state of the bottom sheet
-//            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-//            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-
-//             set the peek height
-            bottomSheetBehavior.setPeekHeight((int) (64 * Resources.getSystem().getDisplayMetrics().density));
-
-//             set hideable or not
-            bottomSheetBehavior.setHideable(true);
-
-//             set callback for changes
-//            bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-//                @Override
-//                public void onStateChanged(@NonNull View bottomSheet, int newState) {
-//
-//                }
-//
-//                @Override
-//                public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-//
-//                }
-//            });
+            View view = getLayoutInflater().inflate(R.layout.bottom_sheet_add, null);
+            BottomSheetDialog dialog = new BottomSheetDialog(MainActivity.this);
+            dialog.setContentView(view);
+            dialog.show();
         }
     };
 
@@ -63,14 +39,10 @@ public class MainActivity extends AppCompatActivity
 
         drawer = findViewById(R.id.drawer_layout);
         fab = findViewById(R.id.fab);
-        llBottomSheet = findViewById(R.id.bottom_sheet);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
-
-        bottomSheetBehavior = BottomSheetBehavior.from(llBottomSheet);
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
         fab.setOnClickListener(onFabClicked);
         navigationView.setNavigationItemSelectedListener(this);
@@ -80,6 +52,10 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        navigationView.getMenu().getItem(0).setChecked(true);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new WorkflowFragment())
+                .commit();
     }
 
     @Override
@@ -106,17 +82,15 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.actionSearch) {
-            return true;
-        } else if (id == R.id.actionGrid) {
-            return true;
+        switch (id) {
+            case R.id.actionSearch:
+                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -134,7 +108,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

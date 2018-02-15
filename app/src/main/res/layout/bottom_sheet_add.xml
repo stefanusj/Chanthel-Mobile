@@ -16,21 +16,21 @@
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:text="Task" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:text="Folder" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:text="Case" />
     </LinearLayout>
@@ -42,21 +42,21 @@
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:text="Link" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:text="Action" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:text="Remburse" />
     </LinearLayout>
@@ -68,14 +68,14 @@
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:text="Lembur" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="80dp"
             android:layout_weight="2"
             android:text="Upload File" />
     </LinearLayout>
